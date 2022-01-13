@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- stylesheet link-->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--navbar-->
+  <nav class = "navbar navbar-default navbar-fixed-top">
+    <div class = "container-fluid">
+      <div class ="navbar-header">
+        <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" 
+          data-target ="#bs-navbar-collapse" aria-expanded="false">
+          <span class = "sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class = "collapse navbar-collapse" id = "bs-navbar-collapse">
+        <ul class = "nav navbar-nav">
+          <li class ="active">
+            <a class = "nav-link" href = "index.html">Refresh</a>
+          </li>
+          <li>
+            <a class = "nav-link" href = "#bar">Bar Chart</a>
+          </li>
+          <li class = "active">
+            <a class = "nav-link" href = "#bubble">Bubble Chart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--jumbotron-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class ="row">
+      <div class ="col-md-12">
+        <h3 style="color:#069">About This Project</h3>
+        <p>This webpage is a visualization of the bacteria culture information for 
+          each volunteer. With this webpage, each volunteer is able to identify the
+          top ten bacterial species in their belly buttons. This information can also 
+          be used by researchers if a species of bacteria is beneficial for the study. <br><br>
+          For this project, each participant was given a unique ID to keep their identities 
+          anonymous. The user may select an ID from the dropdown menu below to filter 
+          the data on that specific ID.<br>With the ID selected, the participants 
+          demographic information is presented to aid in ones research. Next to the 
+          demographic information is a horizontal bar chart that displays the top ten 
+          bacterial species for the selected individual. If one hovers over the bar, 
+          the name of the bacteria associated with the OTU ID will be displayed.<br>
+          The gauge meter displays the wash frequency of each participant to further 
+          visually aid in ones research.<br>Lastly, the bubble chart displays the 
+          bacterial data per sample for each participant where the samples are graphed 
+          by the OTU ID along the x-axis and the sample values as the y-axis. Furthermore, 
+          the size of each marker corresponds to the sample values and the color of each 
+          marker represents the OTU ID. Like the bar chart, the each marker of the hover 
+          chart will display the OTU Label corresponding to each bacterial ID.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5 style="color:#069">Test Subject ID No.:</h5>
+          <!-- create element for dropdown menu and modify it to call a JS function-->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <!--create element for panel with selected persons info-->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <!-- information panel -->
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <!-- for bar chart call bar-->
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <!-- for gauge chart call gauge-->
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- for bubble chart call bubble-->
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
