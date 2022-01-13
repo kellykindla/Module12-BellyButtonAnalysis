@@ -1,6 +1,8 @@
 # Belly Button Analysis 
 ## Module 12 
 
+### Click Here to go to [Dashboard](https://kellykindla.github.io/BellyButton/index.html)
+
 ## Project Overview 
 ### Purpose of Module 12 
 The purpose of this module was to build on our knowledge of JavaScript to manipulate, parse, and transform data. We also expanded our knowledge of D3.json and can now collect external data from CSV files and web APIs. We were introduced to Plotly, a data visualization library, and utilized its components to create data visualizations that are not only easy to understand, but interactive. 
